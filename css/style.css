@@ -1,0 +1,202 @@
+/* =========================================
+   1. RESET E VARIÁVEIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #1a1a2e;
+    --cor-destaque: #e94560;
+    --cor-fundo: #f4f4f9;
+    --cor-texto: #333;
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-texto: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* =========================================
+   2. HEADER COM FLEXBOX
+   ========================================= */
+header {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    
+    /* Flexbox para alinhar logo e menu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* =========================================
+   3. LAYOUT PRINCIPAL COM CSS GRID
+   ========================================= */
+.container-layout {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    
+    /* Grid: Conteúdo principal (1fr) e Aside (300px fixos) */
+    display: grid;
+    grid-template-columns: 1fr 300px; 
+    gap: 2rem;
+}
+
+/* =========================================
+   4. CARDS DE NOTÍCIAS (GRID ANINHADO)
+   ========================================= */
+main h1 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 1.5rem;
+}
+
+.grid-noticias {
+    /* Grid para os cards se ajustarem sozinhos */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-noticia {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Para a imagem não sair das bordas */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card-noticia:hover {
+    transform: translateY(-5px); /* Efeito de subir */
+}
+
+.card-noticia img {
+    width: 100%;
+    display: block;
+}
+
+.card-conteudo {
+    padding: 1.5rem;
+}
+
+.card-conteudo h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-conteudo p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-conteudo a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================================
+   5. ASIDE (BARRA LATERAL)
+   ========================================= */
+aside {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    height: fit-content; /* Para não esticar demais */
+}
+
+aside h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin-bottom: 0.5rem;
+}
+
+aside a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+aside a:hover {
+    color: var(--cor-destaque);
+}
+
+/* =========================================
+   6. FOOTER COM FLEXBOX
+   ========================================= */
+footer {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    margin-top: 3rem;
+    
+    /* Flexbox para separar o copyright dos links */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redes-sociais a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+/* =========================================
+   7. RESPONSIVIDADE (Media Query)
+   ========================================= */
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    /* No celular, o layout vira uma coluna só */
+    .container-layout {
+        grid-template-columns: 1fr;
+    }
+}

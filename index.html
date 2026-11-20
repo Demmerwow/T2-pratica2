@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Estruturado - Portal IAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER COM FLEXBOX -->
+    <header>
+        <div class="logo">Portal IAS</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Notícias</a></li>
+                <li><a href="#">Cursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL COM CSS GRID -->
+    <div class="container-layout">
+        
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
+            <h1>Últimas Atualizações</h1>
+            
+            <div class="grid-noticias">
+                <article class="card-noticia">
+                    <img src="https://via.placeholder.com/400x200?text=Noticia+1" alt="Imagem da notícia 1">
+                    <div class="card-conteudo">
+                        <h2>Nova Parceria com a Fundação Wayne</h2>
+                        <p>O IAS acaba de fechar uma nova parceria para ampliar os laboratórios de tecnologia.</p>
+                        <a href="#">Ler mais</a>
+                    </div>
+                </article>
+
+                <article class="card-noticia">
+                    <img src="https://via.placeholder.com/400x200?text=Noticia+2" alt="Imagem da notícia 2">
+                    <div class="card-conteudo">
+                        <h2>Inscrições Abertas para 2027</h2>
+                        <p>As inscrições para os cursos técnicos e de graduação já estão disponíveis.</p>
+                        <a href="#">Ler mais</a>
+                    </div>
+                </article>
+
+                <article class="card-noticia">
+                    <img src="https://via.placeholder.com/400x200?text=Noticia+3" alt="Imagem da notícia 3">
+                    <div class="card-conteudo">
+                        <h2>Feira de Ciências do IAS</h2>
+                        <p>Alunos apresentam projetos inovadores voltados para a sustentabilidade de Gotham.</p>
+                        <a href="#">Ler mais</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- BARRA LATERAL (ASIDE) -->
+        <aside>
+            <h2>Links Rápidos</h2>
+            <ul>
+                <li><a href="#">Calendário Acadêmico</a></li>
+                <li><a href="#">Portal do Aluno</a></li>
+                <li><a href="#">Biblioteca Virtual</a></li>
+            </ul>
+            
+            <h2 style="margin-top: 2rem;">Avisos</h2>
+            <p>Manutenção no laboratório 3 na próxima sexta-feira.</p>
+        </aside>
+
+    </div>
+
+    <!-- FOOTER COM FLEXBOX -->
+    <footer>
+        <p>&copy; 2026 Portal IAS. Todos os direitos reservados.</p>
+        <div class="redes-sociais">
+            <a href="#">Facebook</a> | <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>
